@@ -1,0 +1,36 @@
+# Create the tf2 service 
+---
+- name: Copy run_server script
+  copy:
+    src: service/run_server.sh
+    dest: /home/srcds-server/server/run_server.sh
+    owner: srcds-server
+
+- name: Copy tf script
+  copy:
+    src: service/tf.sh
+    dest: /home/srcds-server/server/tf.sh
+    owner: srcds-server
+
+- name: Copy tf2_ds script
+  copy:
+    src: service/tf2_ds.txt
+    dest: /home/srcds-server/server/tf2_ds.txt
+    owner: srcds-server
+
+- name: Create systemctl service
+  copy:
+    src: service/tf-server.service
+    dest: /etc/systemd/system/tf-server.service
+
+- name: Make scripts executable
+  command: chmod +x /home/srcds-server/server/run_server.sh
+
+- name: Make scripts executable
+  command: chmod +x /home/srcds-server/server/tf.sh
+
+- name: Enable systemctl service
+  command: systemctl enable tf-server.service
+
+- name: Start systemctl service
+  command: systemctl start tf-server.service

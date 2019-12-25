@@ -9,3 +9,8 @@
         name: tf2_server
     - include_role:
         name: tf2_server_competitive
+    - name: Reboot server
+      reboot:
+          reboot_timeout: 600
+          msg: Reboot initiated by Ansible
+          

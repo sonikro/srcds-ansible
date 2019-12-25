@@ -1,0 +1,11 @@
+[Unit]
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/home/srcds-server/server/run_server.sh
+User=srcds-server
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

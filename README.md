@@ -20,6 +20,11 @@ Setups a tf2 server with competitive settings (cfg, maps, plugins)
 ansible-playbook -i inventory.yaml "playbooks/setup-tf2-server-competitive.yml" -K
 ```
 
+# Infrastructure Tips
+
+Usually 4GB of Ram and 2 cores is more than enough to hold on a server with 24+ players
+
+
 # Inventory
 
 The inventory.yaml file is in the gitignore, so each of you can define your own inventory
