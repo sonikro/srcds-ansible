@@ -1,0 +1,20 @@
+---
+- name: Copy cfg files to server
+  copy:
+      dest: /home/srcds-server/server/tf 
+      src: cfg
+      force: yes
+      owner: srcds-server
+- name: Copy addons files to server
+  copy:
+    dest: /home/srcds-server/server/tf
+    src: addons 
+    force: yes
+    owner: srcds-server
+
+- name: Copy mapcycle
+  copy:
+    dest: /home/srcds-server/server/tf/mapcycle.txt
+    src: mapcycle.txt
+    force: yes
+    owner: srcds-server
