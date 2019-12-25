@@ -20,6 +20,15 @@ Setups a tf2 server with competitive settings (cfg, maps, plugins)
 ansible-playbook -i inventory.yaml "playbooks/setup-tf2-server-competitive.yml" -K
 ```
 
+# Download maps from FastDL
+
+If you have a FastDL endpoint hosted in AWS S3, you can pass the following variables:
+- aws_secret_access_key
+- aws_access_key_id
+- aws_storage_bucket_name
+
+And the automation will list all the files in tf/maps, download and extract then to your servers tf/maps, so your server is always in sync with your FastDL server
+
 # Infrastructure Tips
 
 Usually 4GB of Ram and 2 cores is more than enough to hold on a server with 24+ players
