@@ -9,7 +9,7 @@ Configs
         "cfg/sourcemod/sm_warmode_off.cfg"      "War Mode Off"
         "cfg/etf2l_6v6_5cp.cfg"  "ETF2L 6v6 5CP"
         "cfg/etf2l_6v6_ctf.cfg"  "ETF2L 6v6 CTF"
-        "cfg/etf2l_6v6_koth.cfg"  "ETF2L 6v6 KOTH"
+        "cfg/etf2l_6v6_koth.cfg"  "ETF2L 6v6 KOTH"4vdRJiuq
         "cfg/etf2l_6v6_stopwatch.cfg"  "ETF2L 6v6 Stopwatch"
         "cfg/etf2l_9v9_5cp.cfg"  "ETF2L 9v9 5CP"
         "cfg/etf2l_9v9_ctf.cfg"  "ETF2L 9v9 CTF"
