@@ -38,3 +38,18 @@ Usually 4GB of Ram and 2 cores is more than enough to hold on a server with 24+ 
 
 The inventory.yaml file is in the gitignore, so each of you can define your own inventory
 You might consider using AWX or Ansible Tower to manage the inventory as well
+
+Example
+
+```yaml
+all:
+  hosts:
+    ubuntu-vm:
+      ansible_host: 192.168.1.61
+      ansible_connection: ssh
+      ansible_user: ubuntu
+      ansible_password: my_ssh_password
+      aws_access_key_id: "aws_key"
+      aws_secret_access_key: "aws_secret"
+      aws_storage_bucket_name: "bucket_name"
+```
