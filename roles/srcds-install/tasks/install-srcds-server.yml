@@ -1,0 +1,12 @@
+---
+- name: Create server directory
+  file:
+    path: "{{ srcds_server_path }}"
+    state: directory
+  become: yes
+  become_user: "{{ srcds_username }}"
+
+- name: Download srcds server
+  command: "{{ steamcmd_path }}/steamcmd.sh +login anonymous +force_install_dir {{ srcds_server_path }} +app_update {{ srcds_gameid }} +quit"
+  become: yes
+  become_user: "{{ srcds_username }}"

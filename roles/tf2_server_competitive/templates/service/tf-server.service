@@ -3,8 +3,8 @@ After=network-online.target
 Wants=network-online.target
 
 [Service]
-ExecStart=/home/srcds-server/server/run_server.sh
-User=srcds-server
+ExecStart={{srcds_server_path}}/run_server.sh
+User={{srcds_username}}
 Restart=on-failure
 
 [Install]

@@ -5,10 +5,13 @@
     name:
       - python3
       - python3-pip
+  when: aws_access_key_id is defined
+
 
 - name: Install s3_bucket python dependencies
   become: true
   command: pip3 install boto boto3 botocore
+  when: aws_access_key_id is defined
 
 - name: Get list of maps from FastDL (S3 Bucket)
   aws_s3:
@@ -28,7 +31,7 @@
     aws_secret_key: "{{ aws_secret_access_key }}"
     bucket: "{{ aws_storage_bucket_name }}"
     object: "{{ item }}"
-    dest: "/home/srcds-server/server/tf/maps/{{ item|basename }}"
+    dest: "{{ srcds_server_path }}/tf/maps/{{ item|basename }}"
   with_items: "{{ s3_bucket_items.s3_keys }}"
   when: aws_access_key_id is defined
 
@@ -38,8 +41,9 @@
       - bzip2
       - unzip
     state: present
+  when: aws_access_key_id is defined
 
 - name: Unzip all maps
-  command: "bzip2 -d -f /home/srcds-server/server/tf/maps/{{ item|basename}}"
+  command: "bzip2 -d -f {{ srcds_server_path }}/tf/maps/{{ item|basename}}"
   with_items: "{{ s3_bucket_items.s3_keys }}"
   when: s3_bucket_items is defined

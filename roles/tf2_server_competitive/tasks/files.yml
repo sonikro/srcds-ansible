@@ -1,20 +1,20 @@
 ---
 - name: Copy cfg files to server
   copy:
-      dest: /home/srcds-server/server/tf 
+      dest: "{{ srcds_server_path }}/tf" 
       src: cfg
       force: yes
-      owner: srcds-server
+      owner: "{{ srcds_username }}"
 - name: Copy addons files to server
   copy:
-    dest: /home/srcds-server/server/tf
+    dest: "{{ srcds_server_path }}/tf"
     src: addons 
     force: yes
-    owner: srcds-server
+    owner: "{{ srcds_username }}"
 
 - name: Copy mapcycle
   copy:
-    dest: /home/srcds-server/server/tf/mapcycle.txt
+    dest: "{{ srcds_server_path }}/tf/mapcycle.txt"
     src: mapcycle.txt
     force: yes
-    owner: srcds-server
+    owner: "{{ srcds_username }}"

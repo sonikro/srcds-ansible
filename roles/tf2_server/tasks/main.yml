@@ -1,5 +1,0 @@
----
-- name: Install TF2 Server
-  include_tasks: "{{ item }}"
-  with_items:
-    - install-tf2.yml

@@ -1,16 +1,16 @@
 ---
 - name: Create steamcmd folder
   file:
-    path: "/home/srcds-server/steamcmd" 
+    path: "{{ steamcmd_path }}" 
     state: directory
-    owner: srcds-server
+    owner: "{{ srcds_username }}"
 
 - name: Download and extract steamcmd
   unarchive:
     src: http://media.steampowered.com/client/steamcmd_linux.tar.gz
     remote_src: true
-    dest: "/home/srcds-server/steamcmd"
-    owner: srcds-server
+    dest: "{{ steamcmd_path }}"
+    owner: "{{ srcds_username }}"
 
 - name: Fix permissions
-  command: chown -R srcds-server /home/srcds-server/steamcmd
+  command: "chown -R {{ srcds_username }} {{ steamcmd_path }}"

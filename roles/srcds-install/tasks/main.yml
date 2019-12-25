@@ -1,0 +1,5 @@
+---
+- name: Install srcds server
+  include_tasks: "{{ item }}"
+  with_items:
+    - install-srcds-server.yml

@@ -3,5 +3,5 @@
   unarchive:
     src: https://sm.alliedmods.net/smdrop/1.10/sourcemod-1.10.0-git6459-linux.tar.gz
     remote_src: true
-    dest: /home/srcds-server/server/tf
-    owner: srcds-server
+    dest: "{{ srcds_server_path}}/tf"
+    owner: "{{ srcds_username }}"
