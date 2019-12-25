@@ -1,0 +1,23 @@
+---
+- name: Add 32bit support
+  command: "dpkg --add-architecture i386"
+
+- name: Update apt cache
+  apt:
+    update-cache: true
+
+- name: Upgrade apt
+  apt:
+    upgrade: "yes"
+
+- name: Install lib dependencies for srcds
+  apt:
+    name: 
+      - libncurses5:i386
+      - libbz2-1.0:i386
+      - libtinfo5:i386
+      - libcurl3-gnutls:i386
+      - lib32z1
+      - lib32gcc1
+      - lib32stdc++6
+    state: present

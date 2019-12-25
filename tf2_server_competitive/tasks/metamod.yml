@@ -1,0 +1,7 @@
+---
+- name: Download and install metamod
+  unarchive:
+    src: https://mms.alliedmods.net/mmsdrop/1.10/mmsource-1.10.7-git971-linux.tar.gz
+    remote_src: true
+    dest: /home/srcds-server/server/tf
+    owner: srcds-server

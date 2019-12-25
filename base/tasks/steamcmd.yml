@@ -1,0 +1,16 @@
+---
+- name: Create steamcmd folder
+  file:
+    path: "/home/srcds-server/steamcmd" 
+    state: directory
+    owner: srcds-server
+
+- name: Download and extract steamcmd
+  unarchive:
+    src: http://media.steampowered.com/client/steamcmd_linux.tar.gz
+    remote_src: true
+    dest: "/home/srcds-server/steamcmd"
+    owner: srcds-server
+
+- name: Fix permissions
+  command: chown -R srcds-server /home/srcds-server/steamcmd

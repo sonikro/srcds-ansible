@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+  connection: local
+  tasks:
+    - include_role:
+        name: base
+    - include_role:
+        name: tf2_server
+    - include_role:
+        name: tf2_server_competitive

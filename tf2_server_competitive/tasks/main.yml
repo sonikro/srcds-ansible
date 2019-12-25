@@ -1,0 +1,9 @@
+---
+# tasks file for tf2_server_competitive
+- name: Setup server with competitive configuration
+  include_tasks: "{{ item }}"
+  with_items:
+    - metamod.yml
+    - sourcemod.yml
+    - files.yml
+    - maps.yml
